@@ -1,5 +1,5 @@
 # volatility-predictor
-# 📊 Stock Volatility Prediction with Machine Learning
+# Stock Volatility Prediction with Machine Learning
 
 This project predicts 20-day rolling volatility of a stock using historical price data, technical indicators, and macroeconomic signals. It includes model building, evaluation, and simulated trading strategy performance.
 
@@ -11,18 +11,18 @@ This project predicts 20-day rolling volatility of a stock using historical pric
 - Macro data (VIX index, SPY returns)
 - Lagged features (previous day's returns and volatility)
 
-## 🤖 Model
+## Model
 
 - `RandomForestRegressor` (baseline)
 - `XGBoostRegressor` (planned upgrade)
 - Evaluation: MAE, R², and visual comparison of predicted vs actual volatility
 
-## 📈 Backtesting Strategy (Coming Soon)
+## Backtesting Strategy (Coming Soon)
 
 - Trade when volatility breaks thresholds
 - Metrics: Sharpe ratio, drawdown, total return
 
-## 🌐 Future Plans
+## Future Plans
 
 - Add GARCH-based volatility model
 - Switch from level prediction → delta volatility
