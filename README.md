@@ -8,7 +8,7 @@ This project builds a machine learning and Generalized Autoregressive Conditiona
 
 ---
 
-## 🔍 Project Structure
+## Project Structure
 
 - `volatility_strategy.ipynb` – Full Jupyter notebook with:
   - Data collection from Tiingo
@@ -22,7 +22,7 @@ This project builds a machine learning and Generalized Autoregressive Conditiona
 
 ---
 
-## ⚙️ Features Used
+## Features Used
 
 - **Technical Indicators:**  
   - MA20, MA50, MA100  
@@ -41,7 +41,7 @@ This project builds a machine learning and Generalized Autoregressive Conditiona
 
 ---
 
-## 🧠 Models Used
+## Models Used
 
 - `XGBoostRegressor` for 20-day volatility
 - `XGBoostRegressor` for 5-day ΔVolatility
@@ -51,7 +51,7 @@ GridSearchCV is used for hyperparameter tuning.
 
 ---
 
-## 💡 Strategy Logic
+## Strategy Logic
 
 **Buy Signal** is generated when:
 - `|ΔVolatility|` > `ΔVol Threshold` (significant volatility change)
@@ -62,7 +62,7 @@ Final returns are calculated using actual price movement the next day.
 
 ---
 
-## 📊 Performance
+## Performance
 
 Example backtest (2015–2025):
 
@@ -75,7 +75,7 @@ Example backtest (2015–2025):
 
 ---
 
-## 🔮 Prediction Output
+## Prediction Output
 
 For the latest trading day, the model outputs:
 
@@ -86,27 +86,7 @@ For the latest trading day, the model outputs:
 
 ---
 
-## 🚀 How to Run
-
-1. Clone this repo  
-```bash
-git clone https://github.com/bpranavb/volatility_trading_strategy.git
-cd volatility_trading_strategy
-```
-
-2. Install dependencies  
-```bash
-pip install -r requirements.txt
-```
-
-3. Run the notebook  
-```bash
-jupyter notebook volatility_strategy.ipynb
-```
-
----
-
-## 🌐 Next Steps
+## Next Steps
 
 - Add live data pipeline for real-time forecasts
 - Host a dashboard on **Streamlit**
@@ -114,8 +94,7 @@ jupyter notebook volatility_strategy.ipynb
 
 ---
 
-## 👨‍💻 Author
+## Author
 
-**Pranav B.** – [LinkedIn](https://www.linkedin.com/) | [GitHub](https://github.com/bpranavb)
+**Pranav Bollineni** – [LinkedIn](https://www.linkedin.com/in/bpranavb/) | 
 
-If you find this useful, feel free to ⭐️ the repo!
