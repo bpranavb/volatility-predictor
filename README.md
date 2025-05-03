@@ -64,7 +64,7 @@ Final returns are calculated using actual price movement the next day.
 
 ## Performance
 
-Example backtest (2015–2025):
+Example AAPL backtest (2015–2025):
 
 - **Total Return**: 134.00%  
 - **Annualized Return**: 8.90%  
@@ -74,6 +74,11 @@ Example backtest (2015–2025):
 - **Win Rate**: 20.05%
 
 ---
+
+## TradingView Backtest - Pine Script
+
+ Live script: [Volatility ML Strategy on TradingView](https://www.tradingview.com/script/yLgQ6HBi-Volatility-ML-Strategy/)
+
 
 ## Prediction Output
 
