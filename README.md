@@ -1,4 +1,4 @@
-# 📈 Volatility Trading Strategy
+# Volatility Trading Strategy
 
 This project builds a machine learning and Generalized Autoregressive Conditional Heteroskedasticity(GARCH) - powered system to predict 20-day stock volatility using financial indicators and macroeconomic signals. It then simulates a **volatility-driven trading strategy**, combining:
 - An XGBoost model for volatility prediction
