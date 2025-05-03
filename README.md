@@ -3,7 +3,7 @@
 This project builds a machine learning and Generalized Autoregressive Conditional Heteroskedasticity(GARCH) - powered system to predict 20-day stock volatility using financial indicators and macroeconomic signals. It then simulates a **volatility-driven trading strategy**, combining:
 - An XGBoost model for volatility prediction
 - A ΔVolatility model for volatility changes
-- GARCH modeling for baseline variance
+- GARCH modeling for benchmarking volatility
 - A strategy that uses these to generate buy signals with risk-aware thresholds
 
 ---
