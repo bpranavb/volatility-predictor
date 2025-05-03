@@ -1,35 +1,121 @@
-# volatility-predictor
-# Stock Volatility Prediction with Machine Learning
+# 📈 Volatility Trading Strategy
 
-This project predicts 20-day rolling volatility of a stock using historical price data, technical indicators, and macroeconomic signals. It includes model building, evaluation, and simulated trading strategy performance.
-
-## Features Used
-
-- Moving Averages (MA20, MA50, MA100)
-- RSI, Bollinger Bands, MACD, ATR
-- Volume spike flags
-- Macro data (VIX index, SPY returns)
-- Lagged features (previous day's returns and volatility)
-
-## Model
-
-- `RandomForestRegressor` (baseline)
-- `XGBoostRegressor` (planned upgrade)
-- Evaluation: MAE, R², and visual comparison of predicted vs actual volatility
-
-## Backtesting Strategy (Coming Soon)
-
-- Trade when volatility breaks thresholds
-- Metrics: Sharpe ratio, drawdown, total return
-
-## Future Plans
-
-- Add GARCH-based volatility model
-- Switch from level prediction → delta volatility
-- Build a Streamlit dashboard to visualize everything
-- Optimize hyperparameters and add feature importance charts
+This project builds a machine learning and Generalized Autoregressive Conditional Heteroskedasticity(GARCH) - powered system to predict 20-day stock volatility using financial indicators and macroeconomic signals. It then simulates a **volatility-driven trading strategy**, combining:
+- An XGBoost model for volatility prediction
+- A ΔVolatility model for volatility changes
+- GARCH modeling for baseline variance
+- A strategy that uses these to generate buy signals with risk-aware thresholds
 
 ---
 
-Created by [@bpranavb](https://github.com/bpranavb)
+## 🔍 Project Structure
 
+- `volatility_strategy.ipynb` – Full Jupyter notebook with:
+  - Data collection from Tiingo
+  - Feature engineering (RSI, MACD, ATR, BB Width, etc.)
+  - Volatility prediction using XGBoost
+  - GARCH(1,1) volatility modeling
+  - Strategy simulation with threshold tuning
+  - Performance metrics and charts
+
+- `requirements.txt` – All required libraries (xgboost, arch, ta, yfinance, etc.)
+
+---
+
+## ⚙️ Features Used
+
+- **Technical Indicators:**  
+  - MA20, MA50, MA100  
+  - RSI  
+  - Bollinger Band Width  
+  - ATR  
+  - MACD and MACD_diff
+
+- **Macro Signals:**  
+  - VIX Close  
+  - SPY Close
+
+- **Target Variables:**  
+  - 20-day Rolling Volatility  
+  - 5-day ΔVolatility % Change
+
+---
+
+## 🧠 Models Used
+
+- `XGBoostRegressor` for 20-day volatility
+- `XGBoostRegressor` for 5-day ΔVolatility
+- `arch_model` (GARCH(1,1)) for benchmark volatility
+
+GridSearchCV is used for hyperparameter tuning.
+
+---
+
+## 💡 Strategy Logic
+
+**Buy Signal** is generated when:
+- `|ΔVolatility|` > `ΔVol Threshold` (significant volatility change)
+- GARCH Volatility > ML Predicted Volatility by `GARCH Threshold`
+- 3-day momentum > 0 (price is rising)
+
+Final returns are calculated using actual price movement the next day.
+
+---
+
+## 📊 Performance
+
+Example backtest (2015–2025):
+
+- **Total Return**: 134.00%  
+- **Annualized Return**: 8.90%  
+- **Volatility**: 13.79%  
+- **Sharpe Ratio**: 4.67  
+- **Max Drawdown**: 14.18%  
+- **Win Rate**: 20.05%
+
+---
+
+## 🔮 Prediction Output
+
+For the latest trading day, the model outputs:
+
+- 20-day volatility forecast
+- ΔVolatility forecast
+- GARCH forecast
+- Price bounds for tomorrow
+
+---
+
+## 🚀 How to Run
+
+1. Clone this repo  
+```bash
+git clone https://github.com/bpranavb/volatility_trading_strategy.git
+cd volatility_trading_strategy
+```
+
+2. Install dependencies  
+```bash
+pip install -r requirements.txt
+```
+
+3. Run the notebook  
+```bash
+jupyter notebook volatility_strategy.ipynb
+```
+
+---
+
+## 🌐 Next Steps
+
+- Add live data pipeline for real-time forecasts
+- Host a dashboard on **Streamlit**
+- Add Pine Script logic to test signals on **TradingView**
+
+---
+
+## 👨‍💻 Author
+
+**Pranav B.** – [LinkedIn](https://www.linkedin.com/) | [GitHub](https://github.com/bpranavb)
+
+If you find this useful, feel free to ⭐️ the repo!
