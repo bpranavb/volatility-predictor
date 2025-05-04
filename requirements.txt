@@ -1,0 +1,12 @@
+streamlit
+pandas
+numpy
+matplotlib
+seaborn
+yfinance
+xgboost
+scikit-learn
+arch
+ta
+tiingo
+alpha_vantage
