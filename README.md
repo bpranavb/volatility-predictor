@@ -10,15 +10,12 @@ This project builds a machine learning and Generalized Autoregressive Conditiona
 
 ## Project Structure
 
-- `volatility_strategy.ipynb` – Full Jupyter notebook with:
   - Data collection from Tiingo
   - Feature engineering (RSI, MACD, ATR, BB Width, etc.)
   - Volatility prediction using XGBoost
   - GARCH(1,1) volatility modeling
   - Strategy simulation with threshold tuning
   - Performance metrics and charts
-
-- `requirements.txt` – All required libraries (xgboost, arch, ta, yfinance, etc.)
 
 ---
 
